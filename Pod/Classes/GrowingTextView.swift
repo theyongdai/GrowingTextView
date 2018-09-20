@@ -153,12 +153,12 @@ open class GrowingTextView: UITextView {
                 // Otherwise user placeholder and inherit `text` attributes
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.alignment = textAlignment
-                var attributes: [NSAttributedStringKey: Any] = [
-                    .foregroundColor: placeholderColor,
-                    .paragraphStyle: paragraphStyle
+                var attributes: [String: Any] = [
+                    NSForegroundColorAttributeName: placeholderColor,
+                    NSParagraphStyleAttributeName: paragraphStyle
                 ]
                 if let font = font {
-                    attributes[.font] = font
+                    attributes[NSFontAttributeName] = font
                 }
                 
                 placeholder.draw(in: placeholderRect, withAttributes: attributes)
